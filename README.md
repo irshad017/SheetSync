@@ -3,7 +3,7 @@
 ### *Collaborative, Real-Time, and Secure Spreadsheet Management*
 
 [![Vercel Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://sheetsync-client.vercel.app)
-[![Render Backend](https://img.shields.io/badge/Backend%20on-Render-46E3B7?style=for-the-badge&logo=render)](https://back-it.onrender.com/api/spreadsheet/)
+[![Render Backend](https://img.shields.io/badge/Backend%20on-Render-46E3B7?style=for-the-badge&logo=render)](https://sheetsync-00zu.onrender.com/api/spreadsheet/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-irshad017%2FSyncSheet-181717?style=for-the-badge&logo=github)](https://github.com/irshad017/SyncSheet)
 
 ---
@@ -55,16 +55,16 @@ Create a `.env` file inside the `Client` directory:
 
 ```env
 # Render Backend Base URL
-VITE_API_URL=https://back-it.onrender.com
+VITE_API_URL=https://sheetsync-00zu.onrender.com
 
 # Backend Deployment Base URL
-VITE_BACKEND_URL=https://back-it.onrender.com
+VITE_BACKEND_URL=https://sheetsync-00zu.onrender.com
 
 # Spreadsheet API Endpoint
-VITE_SPREADSHEET_API=https://back-it.onrender.com/api/spreadsheet/
+VITE_SPREADSHEET_API=https://sheetsync-00zu.onrender.com/api/spreadsheet/
 ```
 
-> **Note:** The frontend automatically derives the secure WebSocket URL (`wss://back-it.onrender.com`) from the configured HTTP base URL.
+> **Note:** The frontend automatically derives the secure WebSocket URL (`wss://sheetsync-00zu.onrender.com`) from the configured HTTP base URL.
 
 ---
 

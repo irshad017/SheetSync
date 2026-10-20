@@ -63,10 +63,22 @@ function WorkSpace() {
         try {
             const token = localStorage.getItem('token');
             const userId = localStorage.getItem('userId') || user?._id;
-            const response = await axios.delete(`${API_BASE_URL}/api/spreadsheet/${sheetId}`, {
-                headers: token ? { Authorization: `Bearer ${token}` } : {},
-                params: { userId },
-            });
+            let response;
+            try {
+                response = await axios.delete(`${API_BASE_URL}/api/spreadsheet/${sheetId}`, {
+                    headers: token ? { Authorization: `Bearer ${token}` } : {},
+                    params: { userId },
+                });
+            } catch (delErr) {
+                if (delErr.response?.status === 404 && userId) {
+                    response = await axios.get(`${API_BASE_URL}/delete/${userId}`, {
+                        headers: token ? { Authorization: `Bearer ${token}` } : {},
+                        params: { sheetId },
+                    });
+                } else {
+                    throw delErr;
+                }
+            }
             setSpreadsheets((prev) =>
                 prev.filter((item) => {
                     const id = (item && item._id) ? item._id.toString() : (item ? item.toString() : '');

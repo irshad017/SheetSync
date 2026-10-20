@@ -4,9 +4,9 @@ const rawUrl =
   import.meta.env.VITE_API_URL ||
   import.meta.env.VITE_BACKEND_URL ||
   import.meta.env.VITE_SPREADSHEET_API ||
-  'https://back-it.onrender.com';
+  'https://sheetsync-00zu.onrender.com';
 
-// Clean and normalize base URL (e.g. "https://back-it.onrender.com")
+// Clean and normalize base URL (e.g. "https://sheetsync-00zu.onrender.com")
 export const API_BASE_URL = rawUrl
   .replace(/\/api\/spreadsheet\/?$/, '')
   .replace(/\/api\/?$/, '')
